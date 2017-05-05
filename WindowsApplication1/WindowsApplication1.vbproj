@@ -96,6 +96,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Service References\C4C_HistServ\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\C4C_SaldoClientesB\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -106,7 +111,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\C4C_UsoMaquina\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\IF_HistServ\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\IF_SaldoClientesV\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\IF_UsoMaquina\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -136,6 +156,25 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\C4C_HistServ\WindowsApplication1.C4C_HistServ.CreateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\C4C_HistServ\WindowsApplication1.C4C_HistServ.HistServHistServCreateConfirmationMessage_sync.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\C4C_HistServ\WindowsApplication1.C4C_HistServ.HistServHistServReadByIDResponseMessage_sync.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\C4C_HistServ\WindowsApplication1.C4C_HistServ.HistServHistServUpdateConfirmationMessage_sync.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\C4C_HistServ\WindowsApplication1.C4C_HistServ.ReadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\C4C_HistServ\WindowsApplication1.C4C_HistServ.UpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\C4C_HistServ\Wsdl_HistServ_c4c.wsdl" />
     <None Include="Service References\C4C_SaldoClientesB\ClientesB.wsdl" />
     <None Include="Service References\C4C_SaldoClientesB\WindowsApplication1.C4C_SaldoClientesB.ClientesBClientesBCreateConfirmationMessage_sync.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -174,6 +213,32 @@
     <None Include="Service References\C4C_SaldoClientesV\WindowsApplication1.C4C_SaldoClientesV.UpdateResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\C4C_UsoMaquina\WindowsApplication1.C4C_UsoMaquina.CreateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\C4C_UsoMaquina\WindowsApplication1.C4C_UsoMaquina.ReadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\C4C_UsoMaquina\WindowsApplication1.C4C_UsoMaquina.UpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\C4C_UsoMaquina\WindowsApplication1.C4C_UsoMaquina.UsoMaquinaUsoMaquinaCreateConfirmationMessage_sync.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\C4C_UsoMaquina\WindowsApplication1.C4C_UsoMaquina.UsoMaquinaUsoMaquinaReadByIDResponseMessage_sync.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\C4C_UsoMaquina\WindowsApplication1.C4C_UsoMaquina.UsoMaquinaUsoMaquinaUpdateConfirmationMessage_sync.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\C4C_UsoMaquina\Wsdl_UsoMaquina_c4c.wsdl" />
+    <None Include="Service References\IF_HistServ\ipostep_vP.001sap0003.in_WCSX_com.sap.b1i.vplatform.runtime_INB_WS_CALL_SYNC_XPT_INB_WS_CALL_SYNC_XPT.wsdl" />
+    <None Include="Service References\IF_HistServ\WindowsApplication1.IF_HistServ.HistorialDeServResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IF_HistServ\WindowsApplication1.IF_HistServ.ZHistorialDeServResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\IF_SaldoClientesV\ipostep_vP.001sap0003.in_WCSX_com.sap.b1i.vplatform.runtime_INB_WS_CALL_SYNC_XPT_INB_WS_CALL_SYNC_XPT.wsdl" />
     <None Include="Service References\IF_SaldoClientesV\WindowsApplication1.IF_SaldoClientesV.SaldoClientesVResponseType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -181,14 +246,25 @@
     <None Include="Service References\IF_SaldoClientesV\WindowsApplication1.IF_SaldoClientesV.ZSaldoClientesVResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\IF_UsoMaquina\ipostep_vP.001sap0003.in_WCSX_com.sap.b1i.vplatform.runtime_INB_WS_CALL_SYNC_XPT_INB_WS_CALL_SYNC_XPT.wsdl" />
+    <None Include="Service References\IF_UsoMaquina\WindowsApplication1.IF_UsoMaquina.GetUsoMaquinaResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IF_UsoMaquina\WindowsApplication1.IF_UsoMaquina.ZUsoMaquinaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\C4C_HistServ\" />
     <WCFMetadataStorage Include="Service References\C4C_SaldoClientesB\" />
     <WCFMetadataStorage Include="Service References\C4C_SaldoClientesV\" />
+    <WCFMetadataStorage Include="Service References\C4C_UsoMaquina\" />
+    <WCFMetadataStorage Include="Service References\IF_HistServ\" />
     <WCFMetadataStorage Include="Service References\IF_SaldoClientesV\" />
+    <WCFMetadataStorage Include="Service References\IF_UsoMaquina\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\C4C_SaldoClientesB\configuration91.svcinfo" />
@@ -225,6 +301,57 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\IF_UsoMaquina\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\IF_UsoMaquina\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\IF_UsoMaquina\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\C4C_UsoMaquina\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\C4C_UsoMaquina\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\C4C_UsoMaquina\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\C4C_HistServ\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\C4C_HistServ\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\C4C_HistServ\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\IF_HistServ\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\IF_HistServ\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\IF_HistServ\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\logosolutionsap.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

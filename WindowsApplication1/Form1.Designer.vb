@@ -22,69 +22,66 @@ Partial Class Form1
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BtnSaldo = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.BtnUsoMaq = New System.Windows.Forms.Button()
+        Me.BtnHistServ = New System.Windows.Forms.Button()
+        Me.BtnExBodega = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Entry = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Saldo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.BtnSalir = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Button1
+        'BtnSaldo
         '
-        Me.Button1.Location = New System.Drawing.Point(13, 43)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(79, 48)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Saldos"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BtnSaldo.Location = New System.Drawing.Point(17, 24)
+        Me.BtnSaldo.Name = "BtnSaldo"
+        Me.BtnSaldo.Size = New System.Drawing.Size(79, 48)
+        Me.BtnSaldo.TabIndex = 0
+        Me.BtnSaldo.Text = "Saldos"
+        Me.BtnSaldo.UseVisualStyleBackColor = True
         '
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel1.Controls.Add(Me.Button5)
-        Me.Panel1.Controls.Add(Me.Button4)
-        Me.Panel1.Controls.Add(Me.Button3)
-        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.BtnUsoMaq)
+        Me.Panel1.Controls.Add(Me.BtnHistServ)
+        Me.Panel1.Controls.Add(Me.BtnExBodega)
+        Me.Panel1.Controls.Add(Me.BtnSaldo)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Location = New System.Drawing.Point(4, 8)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(364, 139)
+        Me.Panel1.Size = New System.Drawing.Size(364, 106)
         Me.Panel1.TabIndex = 14
         '
-        'Button5
+        'BtnUsoMaq
         '
-        Me.Button5.Location = New System.Drawing.Point(268, 43)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(79, 48)
-        Me.Button5.TabIndex = 17
-        Me.Button5.Text = "Uso de Maquina"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.BtnUsoMaq.Location = New System.Drawing.Point(272, 24)
+        Me.BtnUsoMaq.Name = "BtnUsoMaq"
+        Me.BtnUsoMaq.Size = New System.Drawing.Size(79, 48)
+        Me.BtnUsoMaq.TabIndex = 17
+        Me.BtnUsoMaq.Text = "Uso de Maquina"
+        Me.BtnUsoMaq.UseVisualStyleBackColor = True
         '
-        'Button4
+        'BtnHistServ
         '
-        Me.Button4.Location = New System.Drawing.Point(183, 43)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(79, 48)
-        Me.Button4.TabIndex = 16
-        Me.Button4.Text = "Historial de Servicio"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.BtnHistServ.Location = New System.Drawing.Point(187, 24)
+        Me.BtnHistServ.Name = "BtnHistServ"
+        Me.BtnHistServ.Size = New System.Drawing.Size(79, 48)
+        Me.BtnHistServ.TabIndex = 16
+        Me.BtnHistServ.Text = "Historial de Servicio"
+        Me.BtnHistServ.UseVisualStyleBackColor = True
         '
-        'Button3
+        'BtnExBodega
         '
-        Me.Button3.Location = New System.Drawing.Point(98, 43)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(79, 48)
-        Me.Button3.TabIndex = 15
-        Me.Button3.Text = "Existencia Bodegas"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.BtnExBodega.Location = New System.Drawing.Point(102, 24)
+        Me.BtnExBodega.Name = "BtnExBodega"
+        Me.BtnExBodega.Size = New System.Drawing.Size(79, 48)
+        Me.BtnExBodega.TabIndex = 15
+        Me.BtnExBodega.Text = "Existencia Bodegas"
+        Me.BtnExBodega.UseVisualStyleBackColor = True
         '
         'Label6
         '
@@ -93,71 +90,53 @@ Partial Class Form1
         Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Label6.Location = New System.Drawing.Point(-2, -2)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(10, 139)
+        Me.Label6.Size = New System.Drawing.Size(13, 104)
         Me.Label6.TabIndex = 13
         Me.Label6.Text = "B1if"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'DataGridView1
+        'BtnSalir
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Entry, Me.Nombre, Me.Saldo})
-        Me.DataGridView1.Location = New System.Drawing.Point(4, 167)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(364, 113)
-        Me.DataGridView1.TabIndex = 15
+        Me.BtnSalir.Location = New System.Drawing.Point(145, 120)
+        Me.BtnSalir.Name = "BtnSalir"
+        Me.BtnSalir.Size = New System.Drawing.Size(75, 23)
+        Me.BtnSalir.TabIndex = 16
+        Me.BtnSalir.Text = "Salir"
+        Me.BtnSalir.UseVisualStyleBackColor = True
         '
-        'Entry
+        'PictureBox1
         '
-        Me.Entry.HeaderText = "CardCode"
-        Me.Entry.Name = "Entry"
-        Me.Entry.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        '
-        'Nombre
-        '
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
-        '
-        'Saldo
-        '
-        Me.Saldo.HeaderText = "Saldo"
-        Me.Saldo.Name = "Saldo"
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(126, 286)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 16
-        Me.Button2.Text = "Salir"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.logosolutionsap
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 149)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(161, 50)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 17
+        Me.PictureBox1.TabStop = False
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(374, 321)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.ClientSize = New System.Drawing.Size(374, 198)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.BtnSalir)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Name = "Form1"
-        Me.Text = "Demo IF + C4C"
+        Me.Text = " IF + C4C"
         Me.Panel1.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents Button1 As Button
+    Friend WithEvents BtnSaldo As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label6 As Label
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Entry As DataGridViewTextBoxColumn
-    Friend WithEvents Nombre As DataGridViewTextBoxColumn
-    Friend WithEvents Saldo As DataGridViewTextBoxColumn
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents BtnSalir As Button
+    Friend WithEvents BtnUsoMaq As Button
+    Friend WithEvents BtnHistServ As Button
+    Friend WithEvents BtnExBodega As Button
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

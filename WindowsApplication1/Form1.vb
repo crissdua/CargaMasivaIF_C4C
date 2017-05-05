@@ -1,25 +1,20 @@
-﻿Imports OASP_C.ExBodegaService
-Imports System.Linq
-Imports System.Net
+﻿Imports System.Net
 Imports System.Text
 Imports System.Windows.Forms
-Imports System.Net.Http
-Imports System.Net.Http.Headers
 Imports System.IO
-Imports System.Xml.Linq
-Imports System.Xml
-Imports System.Collections
 Imports System
-Imports System.Net.Security
-Imports Newtonsoft.Json
-Imports Newtonsoft.Json.Linq
-Imports System.Security.Cryptography.X509Certificates
 
 Public Class Form1
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
-        Button1.Enabled = False
-        Button2.Enabled = False
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnSaldo.Click
+
+        BtnSaldo.Enabled = False
+        BtnExBodega.Enabled = False
+        BtnHistServ.Enabled = False
+        BtnUsoMaq.Enabled = False
+        BtnSalir.Enabled = False
+
         Dim objetoEscribir2 As New C4C_SaldoClientesB.CreateResponse
         Dim leerrequest2 As New C4C_SaldoClientesB.CreateRequest
 
@@ -61,7 +56,7 @@ Public Class Form1
                 leerrequest.ClientesVClientesVCreateRequest_sync.ClientesV.Nombre.Value = a.CardName
                 leerrequest.ClientesVClientesVCreateRequest_sync.ClientesV.Saldo.Value = a.Balance
                 objetoEscribir.ClientesVClientesVCreateConfirmation_sync = cliente2.Create(leerrequest.ClientesVClientesVCreateRequest_sync)
-                DataGridView1.Rows.Add(New String() {a.CardCode, a.CardName, a.Balance})
+
                 If a.Balance > 0 Then
                     leerrequest2.ClientesBClientesBCreateRequest_sync.ClientesB.Entry = a.CardCode
                     leerrequest2.ClientesBClientesBCreateRequest_sync.ClientesB.Nombre.Value = a.CardName
@@ -75,17 +70,143 @@ Public Class Form1
                 End If
 
             Next
-            Button2.Enabled = Enabled
+            BtnSaldo.Enabled = True
+            BtnExBodega.Enabled = True
+            BtnHistServ.Enabled = True
+            BtnUsoMaq.Enabled = True
+            BtnSalir.Enabled = True
         Catch ex As Exception
             MessageBox.Show(ex.Message)
+            BtnSaldo.Enabled = True
+            BtnExBodega.Enabled = True
+            BtnHistServ.Enabled = True
+            BtnUsoMaq.Enabled = True
+            BtnSalir.Enabled = True
         End Try
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BtnSalir.Click
         Application.Exit()
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles BtnExBodega.Click
+        BtnSaldo.Enabled = False
+        BtnExBodega.Enabled = False
+        BtnHistServ.Enabled = False
+        BtnUsoMaq.Enabled = False
+        BtnSalir.Enabled = False
+    End Sub
 
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles BtnUsoMaq.Click
+
+        BtnSaldo.Enabled = False
+        BtnExBodega.Enabled = False
+        BtnHistServ.Enabled = False
+        BtnUsoMaq.Enabled = False
+        BtnSalir.Enabled = False
+
+        Dim objetoEscribir As New C4C_UsoMaquina.CreateResponse
+        Dim leerrequest As New C4C_UsoMaquina.CreateRequest
+        Dim cliente2 As New C4C_UsoMaquina.Y0ZJU4DVY_UsoMaquinaClient
+        cliente2.ClientCredentials.UserName.UserName = "_VIEWS"
+        cliente2.ClientCredentials.UserName.Password = "Welcome08"
+
+        Dim request As IF_UsoMaquina.GetUsoMaquinaType = New IF_UsoMaquina.GetUsoMaquinaType
+        Dim response As IF_UsoMaquina.GetUsoMaquinaResponseType = New IF_UsoMaquina.GetUsoMaquinaResponseType
+        Dim cliente As New IF_UsoMaquina.ipostep_vP001sap0003in_WCSX_comsapb1ivplatformruntime_INB_WS_CALL_SYNC_XPT_INB_WS_CALL_SYNC_XPTipo_procClient
+        cliente.ClientCredentials.UserName.UserName = "B1iRuntime"
+        cliente.ClientCredentials.UserName.Password = "Welcome08"
+
+        response = cliente.ZUsoMaquina(request)
+
+        leerrequest.UsoMaquinaUsoMaquinaCreateRequest_sync = New C4C_UsoMaquina.UsoMaquinaUsoMaquinaCreateRequestMessage_sync
+        leerrequest.UsoMaquinaUsoMaquinaCreateRequest_sync.UsoMaquina = New C4C_UsoMaquina.UsoMaquinaUsoMaquinaCreateRequest
+        objetoEscribir.UsoMaquinaUsoMaquinaCreateConfirmation_sync = New C4C_UsoMaquina.UsoMaquinaUsoMaquinaCreateConfirmationMessage_sync
+        leerrequest.UsoMaquinaUsoMaquinaCreateRequest_sync.UsoMaquina.ItemName = New C4C_UsoMaquina.Text
+        leerrequest.UsoMaquinaUsoMaquinaCreateRequest_sync.UsoMaquina.Odometro = New C4C_UsoMaquina.Text
+
+        Try
+
+            For Each a As IF_UsoMaquina.GetUsoMaquinaResponseTypeRow In response.GetUsoMaquinaResult
+                leerrequest.UsoMaquinaUsoMaquinaCreateRequest_sync.UsoMaquina.Entry = a.Serie
+                leerrequest.UsoMaquinaUsoMaquinaCreateRequest_sync.UsoMaquina.ItemName.Value = a.ItemName
+                leerrequest.UsoMaquinaUsoMaquinaCreateRequest_sync.UsoMaquina.Odometro.Value = a.Odometro
+                objetoEscribir.UsoMaquinaUsoMaquinaCreateConfirmation_sync = cliente2.Create(leerrequest.UsoMaquinaUsoMaquinaCreateRequest_sync)
+            Next
+            BtnSaldo.Enabled = True
+            BtnExBodega.Enabled = True
+            BtnHistServ.Enabled = True
+            BtnUsoMaq.Enabled = True
+            BtnSalir.Enabled = True
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            BtnSaldo.Enabled = True
+            BtnExBodega.Enabled = True
+            BtnHistServ.Enabled = True
+            BtnUsoMaq.Enabled = True
+            BtnSalir.Enabled = True
+        End Try
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles BtnHistServ.Click
+        BtnSaldo.Enabled = False
+        BtnExBodega.Enabled = False
+        BtnHistServ.Enabled = False
+        BtnUsoMaq.Enabled = False
+        BtnSalir.Enabled = False
+
+        Dim objetoEscribir As New C4C_HistServ.CreateResponse
+        Dim leerrequest As New C4C_HistServ.CreateRequest
+
+        Dim request As IF_HistServ.HistorialDeServType = New IF_HistServ.HistorialDeServType
+        Dim response As IF_HistServ.HistorialDeServResponseType = New IF_HistServ.HistorialDeServResponseType
+        Dim cliente As New IF_HistServ.ipostep_vP001sap0003in_WCSX_comsapb1ivplatformruntime_INB_WS_CALL_SYNC_XPT_INB_WS_CALL_SYNC_XPTipo_procClient
+        cliente.ClientCredentials.UserName.UserName = "B1iRuntime"
+        cliente.ClientCredentials.UserName.Password = "Welcome08"
+
+        response = cliente.ZHistorialDeServ(request)
+        leerrequest.HistServHistServCreateRequest_sync = New C4C_HistServ.HistServHistServCreateRequestMessage_sync
+        leerrequest.HistServHistServCreateRequest_sync.HistServ = New C4C_HistServ.HistServHistServCreateRequest
+        objetoEscribir.HistServHistServCreateConfirmation_sync = New C4C_HistServ.HistServHistServCreateConfirmationMessage_sync
+        leerrequest.HistServHistServCreateRequest_sync.HistServ.CodCliente = New C4C_HistServ.Text
+        leerrequest.HistServHistServCreateRequest_sync.HistServ.NomCliente = New C4C_HistServ.Text
+        leerrequest.HistServHistServCreateRequest_sync.HistServ.CodMaquina = New C4C_HistServ.Text
+        leerrequest.HistServHistServCreateRequest_sync.HistServ.DesMaquina = New C4C_HistServ.Text
+        leerrequest.HistServHistServCreateRequest_sync.HistServ.CodItem = New C4C_HistServ.Text
+        leerrequest.HistServHistServCreateRequest_sync.HistServ.DesItem = New C4C_HistServ.Text
+        leerrequest.HistServHistServCreateRequest_sync.HistServ.CantItem = New C4C_HistServ.Text
+        leerrequest.HistServHistServCreateRequest_sync.HistServ.NumFactura = New C4C_HistServ.Text
+        leerrequest.HistServHistServCreateRequest_sync.HistServ.FechaFactura = New C4C_HistServ.Text
+        Dim cliente2 As New C4C_HistServ.Y0ZJU4DVY_HistServClient
+        cliente2.ClientCredentials.UserName.UserName = "_VIEWS"
+        cliente2.ClientCredentials.UserName.Password = "Welcome08"
+
+        Try
+            For Each a As IF_HistServ.HistorialDeServResponseTypeRow In response.HistorialDeServResult
+                leerrequest.HistServHistServCreateRequest_sync.HistServ.Entry = a.Entry
+                leerrequest.HistServHistServCreateRequest_sync.HistServ.CodCliente.Value = a.CardCode
+                leerrequest.HistServHistServCreateRequest_sync.HistServ.NomCliente.Value = a.CardName
+                leerrequest.HistServHistServCreateRequest_sync.HistServ.CodMaquina.Value = a.Serie
+                leerrequest.HistServHistServCreateRequest_sync.HistServ.DesMaquina.Value = a.Dscription
+                leerrequest.HistServHistServCreateRequest_sync.HistServ.CodItem.Value = a.ItemCode
+                leerrequest.HistServHistServCreateRequest_sync.HistServ.DesItem.Value = a.ItemName
+                leerrequest.HistServHistServCreateRequest_sync.HistServ.CantItem.Value = a.Quantity
+                leerrequest.HistServHistServCreateRequest_sync.HistServ.NumFactura.Value = a.DocNum
+                leerrequest.HistServHistServCreateRequest_sync.HistServ.FechaFactura.Value = a.DocDate
+                objetoEscribir.HistServHistServCreateConfirmation_sync = cliente2.Create(leerrequest.HistServHistServCreateRequest_sync)
+            Next
+            BtnSaldo.Enabled = True
+            BtnExBodega.Enabled = True
+            BtnHistServ.Enabled = True
+            BtnUsoMaq.Enabled = True
+            BtnSalir.Enabled = True
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            BtnSaldo.Enabled = True
+            BtnExBodega.Enabled = True
+            BtnHistServ.Enabled = True
+            BtnUsoMaq.Enabled = True
+            BtnSalir.Enabled = True
+        End Try
     End Sub
 End Class
